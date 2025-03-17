@@ -1,0 +1,54 @@
+<!--
+Pictures Used Links:
+https://www.google.com/imgres?q=proxmox&imgurl=https%3A%2F%2Fwww.45drives.com%2Fsolutions%2Fproxmox%2Fimg%2Fproxmox_Logo.png&imgrefurl=https%3A%2F%2Fwww.45drives.com%2Fsolutions%2Fproxmox%2F&docid=Wwy2HY8R6jaJNM&tbnid=6L6cUfzxvus39M&vet=12ahUKEwjU7-a0sdOLAxU6K1kFHVofLUYQM3oECBcQAA..i&w=840&h=800&hcb=2&ved=2ahUKEwjU7-a0sdOLAxU6K1kFHVofLUYQM3oECBcQAA
+https://www.google.com/imgres?q=security&imgurl=https%3A%2F%2Fwww.oclc.org%2Fcontent%2Fmarketing%2Fpublish%2Fen_us%2Ftrust%2Fsecurity%2F_jcr_content%2Fhero_area%2Fparsyscolumncontrol_%2Fcol0%2Fparsyscolumncontrol%2Fcol0%2Fparsyscolumncontrol%2Fcol1%2Fimage.img.png%2F1686837674374.png&imgrefurl=https%3A%2F%2Fwww.oclc.org%2Fen%2Ftrust%2Fsecurity.html&docid=yKh6JN9OxOKoIM&tbnid=YFz6kGelz70z1M&vet=12ahUKEwiikvCGsdOLAxUgD1kFHRsKEb4QM3oECBYQAA..i&w=600&h=600&hcb=2&ved=2ahUKEwiikvCGsdOLAxUgD1kFHRsKEb4QM3oECBYQAA
+https://www.google.com/imgres?q=ansible&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F24%2FAnsible_logo.svg%2F1664px-Ansible_logo.svg.png&imgrefurl=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3AAnsible_logo.svg&docid=VNPBl2xvOEzAZM&tbnid=kciGMwcOw1LSpM&vet=12ahUKEwiDiNDZsNOLAxWiF1kFHdL4AMEQM3oECB0QAA..i&w=1664&h=2048&hcb=2&ved=2ahUKEwiDiNDZsNOLAxWiF1kFHdL4AMEQM3oECB0QAA
+https://www.google.com/imgres?q=grafana%20&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa1%2FGrafana_logo.svg%2F1200px-Grafana_logo.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGrafana&docid=fN7Jwr3ucRB44M&tbnid=V8SjjykoKcT1pM&vet=12ahUKEwjo6OSVsdOLAxV7LFkFHZFIGzgQM3oECGYQAA..i&w=1200&h=1227&hcb=2&ved=2ahUKEwjo6OSVsdOLAxV7LFkFHZFIGzgQM3oECGYQAA
+https://www.google.com/imgres?q=RAID%20storage&imgurl=https%3A%2F%2Fwww.securedatarecovery.com%2Fmedia%2Fblog%2F2024%2Fscalable-raid.webp&imgrefurl=https%3A%2F%2Fwww.securedatarecovery.com%2Fblog%2Fraid-101-explaining-configurations-and-benefits&docid=f3aMPPimf7N1XM&tbnid=xsZOlODpiijjkM&vet=12ahUKEwiv95TBsNOLAxWpD1kFHQ3GDHgQM3oECF4QAA..i&w=350&h=300&hcb=2&ved=2ahUKEwiv95TBsNOLAxWpD1kFHQ3GDHgQM3oECF4QAA
+https://roi4cio.com/catalog/product/vmware-esxi
+https://www.google.com/imgres?q=vlans&imgurl=https%3A%2F%2Fwww.etherwan.com%2Fsites%2Fdefault%2Ffiles%2Fvlan-6.jpg&imgrefurl=https%3A%2F%2Fwww.etherwan.com%2Fus%2Fsupport%2Ffeatured-articles%2Fbrief-introduction-vlans&docid=ewE-NoX0RDKF8M&tbnid=PLivVzkjzphlVM&vet=12ahUKEwjY6c3Rr9OLAxXzFmIAHSG2L6oQM3oECFMQAA..i&w=685&h=380&hcb=2&ved=2ahUKEwjY6c3Rr9OLAxXzFmIAHSG2L6oQM3oECFMQAA
+https://www.google.com/imgres?q=kubernetes&imgurl=https%3A%2F%2Fi0.wp.com%2Fcodeblog.dotsandbrackets.com%2Fwp-content%2Fuploads%2F2017%2F07%2Fkubernetes.jpg%3Ffit%3D821%252C714%26ssl%3D1&imgrefurl=https%3A%2F%2Fcodeblog.dotsandbrackets.com%2Fwhat-kubernetes%2F&docid=vUOwgEEazoKDWM&tbnid=NLs4xtVwsu5q4M&vet=12ahUKEwjS7siTsNOLAxXKEFkFHdJ2PNcQM3oECGgQAA..i&w=821&h=714&hcb=2&ved=2ahUKEwjS7siTsNOLAxXKEFkFHdJ2PNcQM3oECGgQAA
+-->
+{% extends "homelabs/base.html" %}
+
+
+{% block page-title%} View Guides Page {% endblock %}
+
+{% block content %}
+    <!-- Categories -->
+    {% include 'homelabs/components/categories.html' %}
+
+    <div id="filter-container">
+        <!-- Filter: Label 1, Label 2, Sort: Newest -->
+        {% include 'homelabs/components/labels.html' with filter_labels=filter.labels %}
+
+        <div class="sort">
+            <label for="sorting">Sort: </label>
+            <select id="sorting" name="sorting">
+                <option value="option1">Popular</option>
+                <option value="option2">Newest</option>
+                <option value="option3">Oldest</option>
+            </select>
+        </div> <!-- Search Results, Prev 1 2 3 Next -->
+    </div> <!-- Filtering -->
+
+    <div id="guide-pagination">
+        <h4 id="pagination-info">Search Results: 1 - 8 of 16</h4>
+        <nav id="pagination-nav">
+            <button class="prev">Prev</button>
+            <ul id="pagination-list">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+            </ul>
+            <button class="next">Next</button>
+        </nav>
+    </div> <!-- Going through pages -->
+
+    <div id="guide-list">
+        {% for guide in guides %}
+            {% include 'homelabs/components/guide/box.html' with image_url=guide.image_url title=guide.title author=guide.author labels=guide.labels views=guide.views edits=guide.edits likes=guide.likes %}
+        {% endfor %}
+    </div>
+{% endblock %}
+

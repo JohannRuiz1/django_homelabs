@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home Labs | {% block page-title  %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Javascript -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+<!--
+Pictures Used:
+https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleusercontent.com%2FZfx2OSI5XWKhnove-HwdTokQUmCB7cfpX0uGbqxMeQVNMzVPrvgMadFHpbfYoy04NrjFEBk_3A%3Ds900-c-k-c0x00ffffff-no-rj&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCnMGQ8QHMAnVIsI3xJrihhg&docid=pigOYB5dzAx7GM&tbnid=o3jBh8f0qcMNyM&vet=12ahUKEwiT9NOsytOLAxUzK1kFHZQBMZUQM3oECGQQAA..i&w=900&h=900&hcb=2&ved=2ahUKEwiT9NOsytOLAxUzK1kFHZQBMZUQM3oECGQQAA
+-->
+<body>
+    <div id="header" >
+        <!-- Hamburger Menu, Profile + Guides + Add Guides + View Drafts -->
+        <div id="hamburger-menu">
+            <button id="menu-btn">☰</button>
+            <div id="menu-content" class="hidden">
+                <a href="home.html">Home</a>
+                <a href="guides/list.html?search=Guides">Guide Categories</a>
+                <a href="guides/add.html">Add Guide</a>
+                <a href="account/login.html">Login</a>
+            </div>
+        </div>
+
+        <div id="title-logo" class="logo">
+            <a href="home.html"><img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h1>Home Labs</h1></a>
+        </div> <!-- Logo + Title -->
+
+
+        <button id="guide-btn" class="tertiary-btn">Guides</button>
+
+        <div id="search-bar">
+            <!-- Add Search Icon-->
+            <form action="guides/list.html">
+                <input type="search" name="search" placeholder="Enter Guides">
+                <input type="submit" name="submit" />
+            </form>
+        </div> <!-- Search Bar -->
+
+        <div id="login-bar">
+            <!-- Add logic when user is logged in-->
+            <button id="login-btn" class="tertiary-btn">Login</button>
+        </div> <!-- Login-->
+    </div>
+
+    <div id="content" >
+        {% block content  %}{% endblock %}
+    </div>
+
+    <div id="footer" >
+        <div id="footer-logo" class="logo">
+            <!-- Copy right icon-->
+            <img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h3>Home Labs</h3>
+        </div>
+        <div id="contacts">
+            <h3>About Us</h3>
+            <ul>
+                <li>Who are we?</li>
+                <li>Why contribute?</li>
+            </ul>
+            <h3>Find Us</h3>
+            <ul>
+                <li>Instagram</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+        <div id="Attributes">
+            <a href="https://www.flaticon.com/" title="icons">Icons created by Freepik - Flaticon</a>
+        </div>
+    </div>
+</body>
+
+</html>

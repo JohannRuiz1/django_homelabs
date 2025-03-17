@@ -1,0 +1,27 @@
+<div class="guide">
+    <div class="guide-picture">
+        <img src="{{ image_url }}" alt="Guide Image">
+    </div> <!-- Guide Image -->
+
+    <div class="guide-content">
+        <h3>{{ title }}</h3>
+        {% if author %}
+            <p>{{ author }}</p>
+        {% endif %}
+        {% if category %}
+            <p>{{ category }}</p>
+        {% endif %}
+        <!-- Labels -->
+        <div class="guide-labels">
+            {% for label in labels %}
+                <span class="label">{{ label }}</span>
+            {% endfor %}
+        </div>
+    </div> <!-- Guide Content -->
+
+    <div class="guide-icons">
+        <span> 👀 {{ views }}</span>
+        <span> ✏️ {{ edits }}</span>
+        <span> ❤️ {{ likes }}</span>
+    </div> <!-- Guide Icons -->
+</div> <!-- Guide -->

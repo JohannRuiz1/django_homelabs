@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home Labs Home Page</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Javascript -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+<!--
+Pictuers Used:
+https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleusercontent.com%2FZfx2OSI5XWKhnove-HwdTokQUmCB7cfpX0uGbqxMeQVNMzVPrvgMadFHpbfYoy04NrjFEBk_3A%3Ds900-c-k-c0x00ffffff-no-rj&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCnMGQ8QHMAnVIsI3xJrihhg&docid=pigOYB5dzAx7GM&tbnid=o3jBh8f0qcMNyM&vet=12ahUKEwiT9NOsytOLAxUzK1kFHZQBMZUQM3oECGQQAA..i&w=900&h=900&hcb=2&ved=2ahUKEwiT9NOsytOLAxUzK1kFHZQBMZUQM3oECGQQAA
+-->
+<body>
+    <div id="header" >
+        <!-- Hamburger Menu, Profile + Guides + Add Guides + View Drafts -->
+        <div id="hamburger-menu">
+            <button id="menu-btn">☰</button>
+            <div id="menu-content" class="hidden">
+                <a href="index.html">Home</a>
+                <a href="list.html?search=Guides">Guide Categories</a>                <a href="add-guide.html">Add Guide</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+
+        <div id="title-logo" class="logo">
+            <a href="index.html"><img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h1>Home Labs</h1></a>
+        </div> <!-- Logo + Title -->
+        
+        
+        <button id="guide-btn" class="tertiary-btn">Guides</button>
+
+        <div id="search-bar">
+            <!-- Add Search Icon-->
+            <form action="list.html">
+                <input type="search" name="search" placeholder="Enter Guides">
+                <input type="submit" name="submit" />
+            </form> 
+        </div> <!-- Search Bar -->
+
+        <div id="login-bar">
+            <!-- Add logic when user is logged in-->
+            <button id="login-btn" class="tertiary-btn">Login</button>
+        </div> <!-- Login-->
+    </div>
+
+    <div id="content" >
+        <h1> Weekly Featured Guide</h1>
+        <div id="featured-container">
+            <div id="featured-user">
+                <img src="img/headshot.jpeg" alt="Featured User Picture">
+                <h1>JohannRuiz176</h1>
+            </div> <!-- Featured User -->
+            <a href="guide.html" class="guide-link">
+                <div class="guide">
+                    <div class="guide-picture">
+                        <img src="img/gitlab-logo.png" alt="Guide Image">
+                    </div> <!-- Guide Image -->
+
+                    <div class="guide-content">
+                        <h3>Setting Up Gitlab</h3>
+                        <p>Development/Testing</p>
+                        <!-- Labels -->
+                        <div class="guide-labels">
+                            <span class="label">
+                                Virtualized
+                            </span>
+                            <span class="label">
+                                Web-Based
+                            </span>
+                        </div>
+                    </div> <!-- Guide Content -->
+
+                    <div class="guide-icons">
+                        <span> 👀 12</span>
+                        <span> ✏️ 5</span>
+                        <span> ❤️ 8</span>
+                    </div> <!-- Guide Icons --> 
+                </div> <!-- Guide -->
+            </a>
+        </div> <!-- Featured Guide Container -->
+
+        <div id="home-information">
+            <div class="paragraph-info">
+                <h2>Welcome to Home Labs</h2>
+                <p>Home Labs is your go-to platform for creating, exploring, and refining DIY home lab guides. Whether you're setting up a smart home, building a network lab, or experimenting with electronics, our guides provide step-by-step instructions to help you succeed.</p>
+            </div>
+            <div class="paragraph-info">
+                <h2>Build, Learn, and Share</h2>
+                <p>Join a community of makers and enthusiasts by creating your own guides, exploring others' projects, and engaging in discussions. Share your knowledge, ask questions, and improve your skills through interactive learning.</p>
+            </div>
+            <div class="paragraph-info">
+                <h2>Real-Time Suggestions</h2>
+                <p>Enhance your guides with our unique suggestion feature, which allows users to leave live, context-aware comments directly on guides. These suggestions help refine instructions, troubleshoot issues, and foster collaborative learning.</p>
+            </div>
+        </div> <!-- Information Section -->
+    </div>
+
+    <div id="footer" >
+        <div id="footer-logo" class="logo">
+            <!-- Copy right icon-->
+            <img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h3>Home Labs</h3>
+        </div>
+        <div id="contacts">
+            <h3>About Us</h3>
+            <ul>
+                <li>Who are we?</li>
+                <li>Why contribute?</li>
+            </ul>
+            <h3>Find Us</h3>
+            <ul>
+                <li>Instagram</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+        <div id="Attributes">
+            <a href="https://www.flaticon.com/" title="icons">Icons created by Freepik - Flaticon</a>
+        </div>
+    </div>
+</body>
+
+</html>

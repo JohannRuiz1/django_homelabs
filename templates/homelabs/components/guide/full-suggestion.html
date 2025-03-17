@@ -1,0 +1,44 @@
+<!-- Left side: Advertisement and main guide content -->
+<div id="guide-body">
+    <div id="guide-left">
+        <div id="guide-main">
+            <img src="{{ image_url }}" alt="Guide Image">
+
+            <div id="prerequisites-section">
+                <h3>Prerequisites:</h3>
+                <ul>
+                    {% for prerequisite in prerequisites %}
+                        <li>{{ prerequisite }}</li>
+                    {% endfor %}
+                </ul>
+                <div id="add-prereq-section">
+                                <button>ADD PREREQUISITE?</button>
+                </div> <!-- Add prereq -->
+            </div> <!-- Prereq Guide -->
+
+            <div id="steps-section">
+                <h3>Steps:</h3>
+                <ol>
+                    {% for step in steps %}
+                        <li>
+                            <strong>{{ step.title }}</strong>
+                            <p>{{ step.description }}</p>
+                            {% if step.command %}
+                            <pre>{{ step.command }}</pre>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ol>
+                <div id="add-step-section">
+                    <button>ADD STEP?</button>
+                </div> <!-- Add Step  -->
+            </div>
+        </div> <!-- Step Guide -->
+    </div>
+
+   <div id="guide-mode">
+        <h3>Mode: Suggestion</h3>
+        <input type="text" name="suggestion-name" placeholder="Input Suggestion Name">
+        <button id="save-suggestion-btn" class="tertiary-btn">Save</button>
+    </div> <!-- Guide Mode-->
+</div>

@@ -1,0 +1,126 @@
+/* Filter container as flex with wrapping enabled */
+#filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Category row: left-align its content */
+#category-select {
+    display: flex;
+    text-align: left;
+    align-items: baseline;
+    gap: 12px;
+}
+
+#category-select label {
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+}
+
+#category-select select {
+    padding: 8px 12px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    /* appearance: none; Remove default arrow if desired */
+}
+
+.label-filters label {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+}
+
+.label-filters  select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    /* appearance: none; Remove default arrow if desired */
+}
+
+.sort label {
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+}
+
+.sort  select {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    /* appearance: none; Remove default arrow if desired */
+}
+
+/* Label filters on the left (inline) */
+.label-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* If needed, style the select element within label-filters */
+.label-filters select {
+    padding: 4px;
+}
+
+/* Container for the entire pagination area */
+#guide-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* The navigation area for pagination controls */
+#pagination-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Controls space between Prev, page numbers, and Next */
+}
+
+/* Unordered list for pagination numbers */
+#pagination-list {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for each page link */
+#pagination-list li a {
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s ease;
+}
+
+/* Hover state for page links */
+#pagination-list li a:hover {
+    background: #eee;
+}
+
+#guide-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;         /* Fixed 20px gap between items */
+}
+
+.guide {
+    max-width: 300px;
+    width: 100%;
+}
+

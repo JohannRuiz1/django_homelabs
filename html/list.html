@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home Labs List Page</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/list.css">
+    <!-- Javascript -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/search.js"></script>
+
+</head>
+<!--
+Pictures Used Links:
+https://www.google.com/imgres?q=proxmox&imgurl=https%3A%2F%2Fwww.45drives.com%2Fsolutions%2Fproxmox%2Fimg%2Fproxmox_Logo.png&imgrefurl=https%3A%2F%2Fwww.45drives.com%2Fsolutions%2Fproxmox%2F&docid=Wwy2HY8R6jaJNM&tbnid=6L6cUfzxvus39M&vet=12ahUKEwjU7-a0sdOLAxU6K1kFHVofLUYQM3oECBcQAA..i&w=840&h=800&hcb=2&ved=2ahUKEwjU7-a0sdOLAxU6K1kFHVofLUYQM3oECBcQAA
+https://www.google.com/imgres?q=security&imgurl=https%3A%2F%2Fwww.oclc.org%2Fcontent%2Fmarketing%2Fpublish%2Fen_us%2Ftrust%2Fsecurity%2F_jcr_content%2Fhero_area%2Fparsyscolumncontrol_%2Fcol0%2Fparsyscolumncontrol%2Fcol0%2Fparsyscolumncontrol%2Fcol1%2Fimage.img.png%2F1686837674374.png&imgrefurl=https%3A%2F%2Fwww.oclc.org%2Fen%2Ftrust%2Fsecurity.html&docid=yKh6JN9OxOKoIM&tbnid=YFz6kGelz70z1M&vet=12ahUKEwiikvCGsdOLAxUgD1kFHRsKEb4QM3oECBYQAA..i&w=600&h=600&hcb=2&ved=2ahUKEwiikvCGsdOLAxUgD1kFHRsKEb4QM3oECBYQAA
+https://www.google.com/imgres?q=ansible&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F24%2FAnsible_logo.svg%2F1664px-Ansible_logo.svg.png&imgrefurl=https%3A%2F%2Fen.m.wikipedia.org%2Fwiki%2FFile%3AAnsible_logo.svg&docid=VNPBl2xvOEzAZM&tbnid=kciGMwcOw1LSpM&vet=12ahUKEwiDiNDZsNOLAxWiF1kFHdL4AMEQM3oECB0QAA..i&w=1664&h=2048&hcb=2&ved=2ahUKEwiDiNDZsNOLAxWiF1kFHdL4AMEQM3oECB0QAA
+https://www.google.com/imgres?q=grafana%20&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa1%2FGrafana_logo.svg%2F1200px-Grafana_logo.svg.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGrafana&docid=fN7Jwr3ucRB44M&tbnid=V8SjjykoKcT1pM&vet=12ahUKEwjo6OSVsdOLAxV7LFkFHZFIGzgQM3oECGYQAA..i&w=1200&h=1227&hcb=2&ved=2ahUKEwjo6OSVsdOLAxV7LFkFHZFIGzgQM3oECGYQAA
+https://www.google.com/imgres?q=RAID%20storage&imgurl=https%3A%2F%2Fwww.securedatarecovery.com%2Fmedia%2Fblog%2F2024%2Fscalable-raid.webp&imgrefurl=https%3A%2F%2Fwww.securedatarecovery.com%2Fblog%2Fraid-101-explaining-configurations-and-benefits&docid=f3aMPPimf7N1XM&tbnid=xsZOlODpiijjkM&vet=12ahUKEwiv95TBsNOLAxWpD1kFHQ3GDHgQM3oECF4QAA..i&w=350&h=300&hcb=2&ved=2ahUKEwiv95TBsNOLAxWpD1kFHQ3GDHgQM3oECF4QAA
+https://roi4cio.com/catalog/product/vmware-esxi
+https://www.google.com/imgres?q=vlans&imgurl=https%3A%2F%2Fwww.etherwan.com%2Fsites%2Fdefault%2Ffiles%2Fvlan-6.jpg&imgrefurl=https%3A%2F%2Fwww.etherwan.com%2Fus%2Fsupport%2Ffeatured-articles%2Fbrief-introduction-vlans&docid=ewE-NoX0RDKF8M&tbnid=PLivVzkjzphlVM&vet=12ahUKEwjY6c3Rr9OLAxXzFmIAHSG2L6oQM3oECFMQAA..i&w=685&h=380&hcb=2&ved=2ahUKEwjY6c3Rr9OLAxXzFmIAHSG2L6oQM3oECFMQAA
+https://www.google.com/imgres?q=kubernetes&imgurl=https%3A%2F%2Fi0.wp.com%2Fcodeblog.dotsandbrackets.com%2Fwp-content%2Fuploads%2F2017%2F07%2Fkubernetes.jpg%3Ffit%3D821%252C714%26ssl%3D1&imgrefurl=https%3A%2F%2Fcodeblog.dotsandbrackets.com%2Fwhat-kubernetes%2F&docid=vUOwgEEazoKDWM&tbnid=NLs4xtVwsu5q4M&vet=12ahUKEwjS7siTsNOLAxXKEFkFHdJ2PNcQM3oECGgQAA..i&w=821&h=714&hcb=2&ved=2ahUKEwjS7siTsNOLAxXKEFkFHdJ2PNcQM3oECGgQAA
+-->
+
+<body>
+    <div id="header" >
+        <!-- Hamburger Menu, Profile + Guides + Add Guides + View Drafts -->
+        <div id="hamburger-menu">
+            <button id="menu-btn">☰</button>
+            <div id="menu-content" class="hidden">
+                <a href="index.html">Home</a>
+                <a href="list.html?search=Guides">Guide Categories</a>                <a href="add-guide.html">Add Guide</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+
+        <div id="title-logo" class="logo">
+            <a href="index.html"><img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h1>Home Labs</h1></a>
+        </div> <!-- Logo + Title -->
+
+        <button id="guide-btn" class="tertiary-btn">Guides</button>
+
+        <div id="search-bar">
+            <!-- Add Search Icon-->
+            <form action="list.html">
+                <input type="search" name="search" placeholder="Enter Guides">
+                <input type="submit" name="submit" /> 
+            </form> 
+        </div> <!-- Search Bar -->
+
+        <div id="login-bar">
+            <!-- Add logic when user is logged in-->
+            <button id="login-btn" class="tertiary-btn">Login</button>
+        </div> <!-- Login-->
+    </div>
+
+    <div id="content" >
+        <div id="category-select">
+            <label for="categories">Category: </label>
+            <select id="categories" name="categories">
+                <option value="default">Select a Category</option>
+                <option value="Networking">Networking</option>
+                <option value="Virtualization">Virtualization</option>
+                <option value="Kubernetes">Kubernetes</option>
+                <option value="Storage">Storage</option>
+                <option value="Automation">Automation</option>
+                <option value="Monitoring">Monitoring</option>
+                <option value="Operating_Systems">Operating Systems</option>
+                <option value="Cloud/Hybrid">Cloud/Hybrid</option>
+                <option value="Development/Testing">Development/Testing</option>
+                <option value="Power/Cooling">Power/Cooling</option>
+                <option value="Security/Hardening">Security/Hardening</option>
+                <option value="Hardware/Builds">Hardware/Builds</option>
+            </select>
+        </div> <!-- Categories -->
+
+        <div id="filter-container">
+            <!-- Filter: Label 1, Label 2, Sort: Newest -->
+            <div class="label-filters">
+                <label for="labels">Labels: </label>
+                <select id="labels" name="labels">
+                    <option value="default" disabled selected>Label</option>
+                    <option value="Beginner-Friendly">Beginner-Friendly</option>
+                    <option value="Advanced">Advanced</option>
+                    <option value="Budget-Friendly">Budget-Friendly</option>
+                    <option value="Enterprise-Level">Enterprise-Level</option>
+                    <option value="Cloud-Based">Cloud-Based</option>
+                    <option value="Homelab_Essentials">Homelab Essentials</option>
+                    <option value="Security-Focused">Security-Focused</option>
+                    <option value="Performance_Optimization">Optimization</option>
+                    <option value="Redundancy/High_Availability">Redundancy/HA</option>
+                    <option value="Energy_Efficient">Energy Efficient</option>
+                    <option value="Headless_Setup">Headless Setup</option>
+                    <option value="Web-Based_Management">Web-Based</option>
+                    <option value="CLI-Based_Setup">CLI-Based</option>
+                    <option value="Bare-Metal">Bare-Metal</option>
+                    <option value="Virtualized_Deployment">Virtualized</option>
+                    <option value="Containerization">Containerization</option>
+                    <option value="Offline_Capable">Offline Capable</option>
+                    <option value="Best_Practices">Best Practices</option>
+                </select>
+
+                <div class="guide-labels">
+                    <span class="label">
+                        Virtualized
+                        <button class="remove-label" aria-label="Remove label">✖</button>
+                    </span>
+                    <span class="label">
+                        Web-Based
+                        <button class="remove-label" aria-label="Remove label">✖</button>
+                    </span>
+                </div>
+
+            </div>
+            <div class="sort">
+                <label for="sorting">Sort: </label>
+                <select id="sorting" name="sorting">
+                    <option value="option1">Popular</option>
+                    <option value="option2">Newest</option>
+                    <option value="option3">Oldest</option>
+                </select>
+            </div> <!-- Search Results, Prev 1 2 3 Next -->
+        </div> <!-- Filtering -->
+
+        <div id="guide-pagination">
+            <h4 id="pagination-info">Search Results: 1 - 8 of 16</h4>
+            <nav id="pagination-nav">
+                <button class="prev">Prev</button>
+                <ul id="pagination-list">
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
+                <button class="next">Next</button>
+            </nav>
+        </div> <!-- Going through pages -->
+
+        <div id="guide-list">
+            <a href="guide.html" class="guide-link">
+                <div class="guide">
+                    <div class="guide-picture">
+                        <img src="img/networking.png" alt="Guide Image">
+                    </div> 
+                    <div class="guide-content">
+                        <h3>Setting Up VLANs for Home Networks</h3>
+                        <p>By TechWizard</p>
+                        <div class="guide-labels">
+                            <span class="label">Beginner-Friendly</span>
+                            <span class="label">Networking</span>
+                        </div>
+                    </div>
+                    <div class="guide-icons">
+                        <span> 👀 34</span>
+                        <span> ✏️ 10</span>
+                        <span> ❤️ 15</span>
+                    </div>
+                </div>
+            </a> <!-- Guide -->
+        
+            <a href="guide.html" class="guide-link">
+                <div class="guide">
+                    <div class="guide-picture">
+                        <img src="img/virtualization.png" alt="Guide Image">
+                    </div> 
+                    <div class="guide-content">
+                        <h3>First time with ESXi</h3>
+                        <p>By ServerNerd</p>
+                        <div class="guide-labels">
+                            <span class="label">Virtualized</span>
+                            <span class="label">Enterprise-Level</span>
+                        </div>
+                    </div>
+                    <div class="guide-icons">
+                        <span> 👀 27</span>
+                        <span> ✏️ 7</span>
+                        <span> ❤️ 12</span>
+                    </div>
+                </div>
+            </a> <!-- Guide -->
+        
+            <a href="guide.html" class="guide-link">
+                <div class="guide">
+                    <div class="guide-picture">
+                        <img src="img/kubernetes.png" alt="Guide Image">
+                    </div> 
+                    <div class="guide-content">
+                        <h3>Deploying a Kubernetes Cluster</h3>
+                        <p>By DevOpsDude</p>
+                        <div class="guide-labels">
+                            <span class="label">Containerization</span>
+                            <span class="label">Redundancy/HA</span>
+                        </div>
+                    </div>
+                    <div class="guide-icons">
+                        <span> 👀 42</span>
+                        <span> ✏️ 15</span>
+                        <span> ❤️ 18</span>
+                    </div>
+                </div>
+            </a> <!-- Guide -->
+        
+            <a href="guide.html" class="guide-link">
+                <div class="guide">
+                    <div class="guide-picture">
+                        <img src="img/storage.jpeg" alt="Guide Image">
+                    </div> 
+                    <div class="guide-content">
+                        <h3>Setting up RAID Storage</h3>
+                        <p>By DataGuardian</p>
+                        <div class="guide-labels">
+                            <span class="label">Redundancy/HA</span>
+                            <span class="label">Enterprise-Level</span>
+                        </div>
+                    </div>
+                    <div class="guide-icons">
+                        <span> 👀 19</span>
+                        <span> ✏️ 5</span>
+                        <span> ❤️ 9</span>
+                    </div>
+                </div>
+            </a> <!-- Guide -->
+        
+            <a href="guide.html" class="guide-link">
+                <div class="guide">
+                    <div class="guide-picture">
+                        <img src="img/automation.png" alt="Guide Image">
+                    </div> 
+                    <div class="guide-content">
+                        <h3>Automating with Ansible Playbooks</h3>
+                        <p>By ScriptMaster</p>
+                        <div class="guide-labels">
+                            <span class="label">CLI-Based</span>
+                            <span class="label">Best Practices</span>
+                        </div>
+                    </div>
+                    <div class="guide-icons">
+                        <span> 👀 31</span>
+                        <span> ✏️ 9</span>
+                        <span> ❤️ 11</span>
+                    </div>
+                </div>
+            </a> <!-- Guide -->
+        
+            <a href="guide.html" class="guide-link">
+                <div class="guide">
+                    <div class="guide-picture">
+                        <img src="img/security.png" alt="Guide Image">
+                    </div> 
+                    <div class="guide-content">
+                        <h3>Securing Your Home Lab</h3>
+                        <p>By CyberSentinel</p>
+                        <div class="guide-labels">
+                            <span class="label">Security-Focused</span>
+                            <span class="label">Best Practices</span>
+                        </div>
+                    </div>
+                    <div class="guide-icons">
+                        <span> 👀 50</span>
+                        <span> ✏️ 20</span>
+                        <span> ❤️ 25</span>
+                    </div>
+                </div>
+            </a> <!-- Guide -->
+        
+            <a href="guide.html" class="guide-link">
+                <div class="guide">
+                    <div class="guide-picture">
+                        <img src="img/monitoring.jpeg" alt="Guide Image">
+                    </div> 
+                    <div class="guide-content">
+                        <h3>Monitoring with Grafana & Prometheus</h3>
+                        <p>By MetricManiac</p>
+                        <div class="guide-labels">
+                            <span class="label">Optimization</span>
+                            <span class="label">Web-Based</span>
+                        </div>
+                    </div>
+                    <div class="guide-icons">
+                        <span> 👀 23</span>
+                        <span> ✏️ 6</span>
+                        <span> ❤️ 8</span>
+                    </div>
+                </div>
+            </a> <!-- Guide -->
+        
+            <a href="guide.html" class="guide-link">
+                <div class="guide">
+                    <div class="guide-picture">
+                        <img src="img/cloud.png" alt="Guide Image">
+                    </div> 
+                    <div class="guide-content">
+                        <h3>Hybrid Cloud with AWS & Proxmox</h3>
+                        <p>By CloudCrafter</p>
+                        <div class="guide-labels">
+                            <span class="label">Cloud-Based</span>
+                            <span class="label">Virtualized</span>
+                        </div>
+                    </div>
+                    <div class="guide-icons">
+                        <span> 👀 29</span>
+                        <span> ✏️ 8</span>
+                        <span> ❤️ 14</span>
+                    </div>
+                </div>
+            </a> <!-- Guide -->
+        </div>
+    </div>
+
+    <div id="footer" >
+        <div id="footer-logo" class="logo">
+            <!-- Copy right icon-->
+            <img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h3>Home Labs</h3>
+        </div>
+        <div id="contacts">
+            <h3>About Us</h3>
+            <ul>
+                <li>Who are we?</li>
+                <li>Why contribute?</li>
+            </ul>
+            <h3>Find Us</h3>
+            <ul>
+                <li>Instagram</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+        <div id="Attributes">
+            <a href="https://www.flaticon.com/" title="icons">Icons created by Freepik - Flaticon</a>
+        </div>
+    </div>
+</body>
+
+</html>

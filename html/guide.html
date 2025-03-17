@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home Labs Guide</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/view.css">
+    <!-- Javascript -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+<!--
+Pictuers Used:
+https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleusercontent.com%2FZfx2OSI5XWKhnove-HwdTokQUmCB7cfpX0uGbqxMeQVNMzVPrvgMadFHpbfYoy04NrjFEBk_3A%3Ds900-c-k-c0x00ffffff-no-rj&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCnMGQ8QHMAnVIsI3xJrihhg&docid=pigOYB5dzAx7GM&tbnid=o3jBh8f0qcMNyM&vet=12ahUKEwiT9NOsytOLAxUzK1kFHZQBMZUQM3oECGQQAA..i&w=900&h=900&hcb=2&ved=2ahUKEwiT9NOsytOLAxUzK1kFHZQBMZUQM3oECGQQAA
+-->
+<body>
+    <div id="header" >
+        <!-- Hamburger Menu, Profile + Guides + Add Guides + View Drafts -->
+        <div id="hamburger-menu">
+            <button id="menu-btn">☰</button>
+            <div id="menu-content" class="hidden">
+                <a href="index.html">Home</a>
+                <a href="list.html?search=Guides">Guide Categories</a>                <a href="add-guide.html">Add Guide</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+
+        <div id="title-logo" class="logo">
+            <a href="index.html"><img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h1>Home Labs</h1></a>
+        </div> <!-- Logo + Title -->
+
+        <button id="guide-btn" class="tertiary-btn">Guides</button>
+
+        <div id="search-bar">
+            <!-- Add Search Icon-->
+            <form action="list.html">
+                <input type="search" name="search" placeholder="Enter Guides">
+                <input type="submit" name="submit" />
+            </form> 
+        </div> <!-- Search Bar -->
+
+        <div id="login-bar">
+            <!-- Add logic when user is logged in-->
+            <button id="login-btn" class="tertiary-btn">Login</button>
+        </div> <!-- Login-->
+    </div>
+
+    <div id="content">
+        <div id="guide-header">
+            <div id="guide-title">
+                <h2>Setting Up Gitlab</h2>
+                <h3>By johannruiz176</h3> 
+            </div>
+            <div id="guide-metadata">
+                <h3>Development & Testing</h3>
+                <div class="guide-labels">
+                    <span class="label">
+                        Virtualized
+                    </span>
+                    <span class="label">
+                        Web-Based
+                    </span>
+                </div>
+                <p>Posted on 01/31/2025</p>
+                <div class="guide-icons">
+                    <span> 👀 12</span>
+                    <span> ✏️ 5</span>
+                    <span> ❤️ 8</span>
+                </div> <!-- Guide Icons --> 
+            </div>
+        </div>
+    
+        <div id="guide-body">
+            <!-- Left side: Advertisement and main guide content -->
+            <div id="guide-left">
+                <div id="advertisement">
+                    <!-- Add later -->
+                </div>
+                <div id="guide-main">
+                    <img src="img/gitlab-logo.png" alt="Guide Image">
+                    <div id="prerequisites-section">
+                        <h3>Prerequisites:</h3>
+                        <ul>
+                            <li>A Linux-based system (Ubuntu 20.04 LTS or later recommended)</li>
+                            <li>Root access to the server (or sudo privileges)</li>
+                            <li>A domain name or IP address to access GitLab</li>
+                            <li>At least 4GB of RAM (8GB recommended for better performance)</li>
+                            <li>Docker installed on the system (if using Docker for installation)</li>
+                            <li>A firewall configured to allow HTTP and HTTPS traffic (ports 80, 443)</li>
+                            <li>Basic knowledge of Linux command-line operations</li>
+                        </ul>
+                    </div> <!-- Prereq Guide -->
+                    
+                    <div id="steps-section">
+                        <h3>Steps:</h3>
+                        <ol>
+                            <li>
+                                <strong>Update the System</strong>
+                                <p>Start by updating your package list and upgrading your existing packages to ensure that everything is up-to-date.</p>
+                                <pre>
+                                    sudo apt update
+                                    sudo apt upgrade -y
+                                </pre>
+                            </li>
+                            <li>
+                                <strong>Install Required Dependencies</strong>
+                                <p>Install required dependencies for GitLab, such as curl, openssh-server, and ca-certificates.</p>
+                                <pre>
+                                    sudo apt install -y curl openssh-server ca-certificates
+                                </pre>
+                            </li>
+                            <li>
+                                <strong>Download and Install GitLab</strong>
+                                <p>Add the official GitLab repository and install GitLab using the package manager.</p>
+                                <pre>
+                                    curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+                                    sudo EXTERNAL_URL="http://your_domain_or_ip" apt-get install gitlab-ee
+                                </pre>
+                            </li>
+                            <li>
+                                <strong>Configure GitLab</strong>
+                                <p>After installation, configure GitLab by reconfiguring it to adjust settings such as ports, URLs, etc.</p>
+                                <pre>
+                                    sudo gitlab-ctl reconfigure
+                                </pre>
+                            </li>
+                            <li>
+                                <strong>Access GitLab</strong>
+                                <p>Open a browser and navigate to your server's domain name or IP address (e.g., http://your_domain_or_ip). You'll be prompted to set up an admin password.</p>
+                            </li>
+                            <li>
+                                <strong>Configure Firewall</strong>
+                                <p>If you're using a firewall (e.g., UFW), make sure to allow HTTP and HTTPS traffic.</p>
+                                <pre>
+                                    sudo ufw allow http
+                                    sudo ufw allow https
+                                    sudo ufw enable
+                                </pre>
+                            </li>
+                            <li>
+                                <strong>Set Up SSL (Optional but Recommended)</strong>
+                                <p>For better security, you should configure SSL for your GitLab server using Let's Encrypt or another SSL provider.</p>
+                                <pre>
+                                    sudo gitlab-ctl reconfigure
+                                </pre>
+                                <p>GitLab can automatically configure SSL if your domain is valid and accessible.</p>
+                            </li>
+                            <li>
+                                <strong>Create a New Project</strong>
+                                <p>After logging in to GitLab, create a new project by clicking on "New Project" from the dashboard.</p>
+                            </li>
+                            <li>
+                                <strong>Set Up Backups</strong>
+                                <p>It's important to configure automatic backups for your GitLab instance to prevent data loss.</p>
+                                <pre>
+                                    sudo gitlab-rake gitlab:backup:create
+                                </pre>
+                                <p>You can set up a cron job for automated backups.</p>
+                            </li>
+                        </ol>
+                    </div>                    
+                </div> <!-- Step Guide -->
+            </div>
+            <div id="guide-mode">
+                <h3>Mode: Viewing (Original)</h3>
+                <select id="suggestions" name="suggestions">
+                    <option value="default">Suggestions</option>
+                    <option value="option1">Better clarification ❤️ 10</option>
+                    <option value="option2">Spelling fixes ❤️ 4</option>
+                    <option value="option3">Adding a fourth step ❤️ 10</option>
+                </select>
+                <button id="add-suggestion-btn" class="tertiary-btn">Add Suggestion</button>
+            </div> <!-- Guide mode -->
+        </div>
+    </div>
+    
+    <div id="footer" >
+        <div id="footer-logo" class="logo">
+            <!-- Copy right icon-->
+            <img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h3>Home Labs</h3>
+        </div>
+        <div id="contacts">
+            <h3>About Us</h3>
+            <ul>
+                <li>Who are we?</li>
+                <li>Why contribute?</li>
+            </ul>
+            <h3>Find Us</h3>
+            <ul>
+                <li>Instagram</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+        <div id="Attributes">
+            <a href="https://www.flaticon.com/" title="icons">Icons created by Freepik - Flaticon</a>
+        </div>
+    </div>
+</body>
+
+</html>

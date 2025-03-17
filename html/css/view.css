@@ -1,0 +1,179 @@
+#guide-title {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+    gap: 12px;
+}
+
+#guide-title h2 {
+    font-size: xx-large;
+    margin: 0;
+}
+
+#guide-title h3 {
+    margin: 0;
+}
+
+#guide-metadata {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+    gap: 12px;
+}
+
+
+/* New styles for the two‑column guide body */
+#guide-body {
+    display: flex;
+    gap: 20px;  /* Adjust gap as needed */
+    align-items: flex-start;
+}
+
+/* The left side contains advertisement and main content */
+#guide-left {
+    flex: 1;  /* This will take up available space */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Vertical spacing between advertisement and main */
+}
+
+/* Main guide content */
+#guide-main {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Style for guide images */
+#guide-main img {
+    min-width: 600px;
+    /* max-width: 100%; */
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Responsive for smaller screens (like phones) */
+@media (max-width: 768px) {
+    #guide-main img {
+        min-width: 100%; /* Ensures it fits the screen on smaller devices */
+    }
+}
+
+/* Prerequisites & Steps Sections */
+#prerequisites-section,
+#steps-section {
+    padding: 15px 20px;
+    border-left: 5px solid #007bff; /* Blue accent */
+    border-radius: 6px;
+    margin-top: 20px;
+    text-align: left; /* Ensures content is left-aligned */
+}
+
+/* Headers: Prerequisites & Steps */
+#prerequisites-section h3,
+#steps-section h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: left; /* Explicit left alignment */
+}
+
+/* Lists: Prerequisites (unordered) & Steps (ordered) */
+#prerequisites-section ul,
+#steps-section ol {
+    padding-left: 20px; /* Aligns content closer to bullets/numbers */
+    margin: 0;
+}
+
+/* List Items */
+#prerequisites-section li,
+#steps-section li {
+    margin-bottom: 10px;
+    padding-left: 5px; /* Ensures content is next to bullets/numbers */
+    text-align: left;
+}
+
+/* Step images */
+#steps-section li img {
+    margin-top: 10px; /* Adds space between text and image */
+    max-width: 100%; /* Ensures image is responsive */
+    height: auto;
+    display: block; /* Prevents unwanted spacing */
+}
+
+/* Improve ordered list (numbered steps) */
+#steps-section ol {
+    list-style-position: inside;
+}
+
+/* Improve unordered list (bullet points) */
+#prerequisites-section ul {
+    list-style-type: disc; 
+    list-style-position: inside;
+}
+
+/* The right side (guide-mode) as a fixed-width sidebar */
+#guide-mode {
+    width: 250px; /* Fixed width for the sidebar */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    /* Flex settings to center content inside the box */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Center horizontally */
+    text-align: center;  /* Center text content */
+    
+    /* Make it sticky so it stays visible when scrolling */
+    position: sticky;
+    top: 20px; /* Adjust this value to set the distance from the top of the viewport */
+}
+
+#guide-mode h3 {
+    margin: 0px;
+}
+
+/* Optional: Style for the button inside guide-mode */
+#guide-mode button {
+    padding: 8px 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#guide-mode button:hover {
+    background-color: #0056b3;
+}
+
+/* Optional: Style for the select element in guide-mode */
+#guide-mode select {
+    width: 100%; /* Makes it as wide as the parent container */
+    max-width: 300px; /* Adjust this to control max width */
+    padding: 10px; /* Adds padding for better appearance */
+    font-size: 16px; /* Increases text size */
+    border: 1px solid #ccc; /* Adds a subtle border */
+    border-radius: 5px; /* Rounds corners */
+    box-sizing: border-box; /* Ensures padding doesn’t increase width */
+}
+
+#guide-mode input[type="text"], select {
+    width: 100%; /* Makes it as wide as the parent container */
+    max-width: 300px; /* Adjust this to control max width */
+    padding: 10px; /* Adds padding for better appearance */
+    font-size: 16px; /* Increases text size */
+    border: 1px solid #ccc; /* Adds a subtle border */
+    border-radius: 5px; /* Rounds corners */
+    box-sizing: border-box; /* Ensures padding doesn’t increase width */
+}
+
+.suggestion-mode li {
+    cursor: pointer;
+}

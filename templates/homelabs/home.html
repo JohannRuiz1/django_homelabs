@@ -1,0 +1,30 @@
+{% extends "homelabs/base.html" %}
+
+
+{% block page-title%} Home Page {% endblock %}
+
+{% block content %}
+    <h1> Weekly Featured Guide</h1>
+    <div id="featured-container">
+        <div id="featured-user">
+            <img src="img/headshot.jpeg" alt="Featured User Picture">
+            <h1>JohannRuiz176</h1>
+        </div> <!-- Featured User -->
+        {% include 'homelabs/components/guide/box.html' with image_url=guide.image_url title=guide.title category=guide.category labels=guide.labels views=guide.views edits=guide.edits likes=guide.likes %}
+    </div> <!-- Featured Guide Container -->
+
+    <div id="home-information">
+        <div class="paragraph-info">
+            <h2>Welcome to Home Labs</h2>
+            <p>Home Labs is your go-to platform for creating, exploring, and refining DIY home lab guides. Whether you're setting up a smart home, building a network lab, or experimenting with electronics, our guides provide step-by-step instructions to help you succeed.</p>
+        </div>
+        <div class="paragraph-info">
+            <h2>Build, Learn, and Share</h2>
+            <p>Join a community of makers and enthusiasts by creating your own guides, exploring others' projects, and engaging in discussions. Share your knowledge, ask questions, and improve your skills through interactive learning.</p>
+        </div>
+        <div class="paragraph-info">
+            <h2>Real-Time Suggestions</h2>
+            <p>Enhance your guides with our unique suggestion feature, which allows users to leave live, context-aware comments directly on guides. These suggestions help refine instructions, troubleshoot issues, and foster collaborative learning.</p>
+        </div>
+    </div> <!-- Information Section -->
+{% endblock %}

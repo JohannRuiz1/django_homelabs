@@ -1,0 +1,32 @@
+<div class="label-filters">
+    <label for="labels">Labels: </label>
+    <select id="labels" name="labels">
+        <option value="default" disabled selected>Label</option>
+        <option value="Beginner-Friendly">Beginner-Friendly</option>
+        <option value="Advanced">Advanced</option>
+        <option value="Budget-Friendly">Budget-Friendly</option>
+        <option value="Enterprise-Level">Enterprise-Level</option>
+        <option value="Cloud-Based">Cloud-Based</option>
+        <option value="Homelab_Essentials">Homelab Essentials</option>
+        <option value="Security-Focused">Security-Focused</option>
+        <option value="Performance_Optimization">Optimization</option>
+        <option value="Redundancy/High_Availability">Redundancy/HA</option>
+        <option value="Energy_Efficient">Energy Efficient</option>
+        <option value="Headless_Setup">Headless Setup</option>
+        <option value="Web-Based_Management">Web-Based</option>
+        <option value="CLI-Based_Setup">CLI-Based</option>
+        <option value="Bare-Metal">Bare-Metal</option>
+        <option value="Virtualized_Deployment">Virtualized</option>
+        <option value="Containerization">Containerization</option>
+        <option value="Offline_Capable">Offline Capable</option>
+        <option value="Best_Practices">Best Practices</option>
+    </select>
+
+    <div class="guide-labels">
+        {% for label in filter_labels %}
+            <span class="label">
+                {{ label }} <button class="remove-label" aria-label="Remove label">✖</button>
+            </span>
+        {% endfor %}
+    </div>
+</div>

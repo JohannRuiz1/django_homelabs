@@ -1,0 +1,17 @@
+<!--
+Pictures Used:
+https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleusercontent.com%2FZfx2OSI5XWKhnove-HwdTokQUmCB7cfpX0uGbqxMeQVNMzVPrvgMadFHpbfYoy04NrjFEBk_3A%3Ds900-c-k-c0x00ffffff-no-rj&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCnMGQ8QHMAnVIsI3xJrihhg&docid=pigOYB5dzAx7GM&tbnid=o3jBh8f0qcMNyM&vet=12ahUKEwiT9NOsytOLAxUzK1kFHZQBMZUQM3oECGQQAA..i&w=900&h=900&hcb=2&ved=2ahUKEwiT9NOsytOLAxUzK1kFHZQBMZUQM3oECGQQAA
+-->
+{% extends "homelabs/base.html" %}
+
+
+{% block page-title%} Viewing Guide Page {% endblock %}
+
+{% block content %}
+    <!-- Guide Header -->
+    {% include 'homelabs/components/guide/full-header.html' with title=guide.title category=guide.category author=guide.author labels=guide.labels views=guide.views edits=guide.edits likes=guide.likes %}
+
+    <!-- Guide Content -->
+    {% include 'homelabs/components/guide/full-view.html' with image_url=guide.image_url prerequisites=guide.prerequisites steps=guide.steps suggestions=guide.suggestions %}
+
+{% endblock %}

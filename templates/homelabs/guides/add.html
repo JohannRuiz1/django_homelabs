@@ -1,0 +1,56 @@
+{% extends "homelabs/base.html" %}
+
+
+{% block page-title%} Add Guide Page {% endblock %}
+
+{% block content %}
+    <div id="guide-title">
+        <h1>Creating DIY Guide</h1>
+    </div>
+
+    <div id="title-section">
+        <label for="form-title">Title:</label>
+        <input type="text" id="form-title" name="form-title" placeholder="Input Title">
+    </div>
+
+    <!-- Categories -->
+    {% include 'homelabs/components/categories.html' %}
+
+    <!-- Guide Labels -->
+    {% include 'homelabs/components/labels.html' with filter_labels=filter.labels %}
+
+    <div id="upload-section">
+        <button class="tertiary-btn">UPLOAD COVER PICTURE!</button>
+    </div> <!-- Cover picture button (Add i icon for information)-->
+
+    <div id="prerequisites-section">
+        <h3>Prerequisites:</h3>
+        <ul id="prerequisites-list">
+            <li>
+                <textarea placeholder="Enter prerequisite details"></textarea>
+                <button class="remove-prereq">✖</button>
+            </li>
+        </ul>
+        <div id="add-prereq-section">
+            <button id="add-prereq-btn" class="tertiary-btn">ADD PREREQUISITE</button>
+        </div>
+    </div> <!-- Prereq section -->
+
+    <div id="steps-section">
+        <h3>Steps:</h3>
+        <ol id="steps-list">
+            <li>
+                <textarea placeholder="Enter step details"></textarea>
+                <button class="remove-step">✖</button>
+                <button class="add-picture">Add Picture?</button>
+                <input type="file" class="step-image"">
+                <span>📷 picture.png</span>
+            </li>
+        </ol>
+        <div id="add-step-section">
+            <button id="add-step-btn" class="tertiary-btn">ADD STEP</button>
+        </div>
+    </div> <!-- Steps section -->
+
+    <button id="submit-btn" class="tertiary-btn">SUBMIT</button>
+{% endblock %}

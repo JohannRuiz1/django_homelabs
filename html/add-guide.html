@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home Labs Add Guide</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/list.css">
+    <link rel="stylesheet" type="text/css" href="css/view.css">
+    <link rel="stylesheet" type="text/css" href="css/add.css">
+    <!-- Javascript -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/add-guide.js"></script>
+</head>
+
+<body>
+    <div id="header" >
+        <!-- Hamburger Menu, Profile + Guides + Add Guides + View Drafts -->
+        <div id="hamburger-menu">
+            <button id="menu-btn">☰</button>
+            <div id="menu-content" class="hidden">
+                <a href="index.html">Home</a>
+                <a href="list.html?search=Guides">Guide Categories</a>                <a href="add-guide.html">Add Guide</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+
+        <div id="title-logo" class="logo">
+            <a href="index.html"><img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h1>Home Labs</h1></a>
+        </div> <!-- Logo + Title -->
+
+        <button id="guide-btn" class="tertiary-btn">Guides</button>
+
+        <div id="search-bar">
+            <!-- Add Search Icon-->
+            <form action="list.html">
+                <input type="search" name="search" placeholder="Enter Guides">
+                <input type="submit" name="submit" />
+            </form> 
+        </div> <!-- Search Bar -->
+
+        <div id="login-bar">
+            <!-- Add logic when user is logged in-->
+            <button id="login-btn" class="tertiary-btn">Login</button>
+        </div> <!-- Login-->
+    </div>
+
+    <div id="content" >
+        <div id="guide-title">
+            <h1>Creating DIY Guide</h1>
+        </div>
+        
+        <div id="title-section">
+            <label for="form-title">Title:</label>
+            <input type="text" id="form-title" name="form-title" placeholder="Input Title">
+        </div>
+        
+        <div id="category-select">
+            <label for="categories">Category: </label>
+            <select id="categories" name="categories">
+                <option value="default">Select a Category</option>
+                <option value="Networking">Networking</option>
+                <option value="Virtualization">Virtualization</option>
+                <option value="Kubernetes">Kubernetes</option>
+                <option value="Storage">Storage</option>
+                <option value="Automation">Automation</option>
+                <option value="Monitoring">Monitoring</option>
+                <option value="Operating_Systems">Operating Systems</option>
+                <option value="Cloud/Hybrid">Cloud/Hybrid</option>
+                <option value="Development/Testing">Development/Testing</option>
+                <option value="Power/Cooling">Power/Cooling</option>
+                <option value="Security/Hardening">Security/Hardening</option>
+                <option value="Hardware/Builds">Hardware/Builds</option>
+            </select>
+        </div> <!-- Categories -->
+        
+        <div class="label-filters">
+            <label for="labels">Labels: </label>
+            <select id="labels" name="labels">
+                <option value="default" disabled selected>Label</option>
+                <option value="Beginner-Friendly">Beginner-Friendly</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Budget-Friendly">Budget-Friendly</option>
+                <option value="Enterprise-Level">Enterprise-Level</option>
+                <option value="Cloud-Based">Cloud-Based</option>
+                <option value="Homelab_Essentials">Homelab Essentials</option>
+                <option value="Security-Focused">Security-Focused</option>
+                <option value="Performance_Optimization">Optimization</option>
+                <option value="Redundancy/High_Availability">Redundancy/HA</option>
+                <option value="Energy_Efficient">Energy Efficient</option>
+                <option value="Headless_Setup">Headless Setup</option>
+                <option value="Web-Based_Management">Web-Based</option>
+                <option value="CLI-Based_Setup">CLI-Based</option>
+                <option value="Bare-Metal">Bare-Metal</option>
+                <option value="Virtualized_Deployment">Virtualized</option>
+                <option value="Containerization">Containerization</option>
+                <option value="Offline_Capable">Offline Capable</option>
+                <option value="Best_Practices">Best Practices</option>
+            </select>
+            <div class="guide-labels">
+                    <span class="label">
+                        Virtualized
+                        <button class="remove-label" aria-label="Remove label">✖</button>
+                    </span>
+                    <span class="label">
+                        Web-Based
+                        <button class="remove-label" aria-label="Remove label">✖</button>
+                    </span>
+            </div>
+        </div> <!-- Guide Labels -->
+        
+        <div id="upload-section">
+            <button class="tertiary-btn">UPLOAD COVER PICTURE!</button>
+        </div> <!-- Cover picture button (Add i icon for information)-->
+        
+        <div id="prerequisites-section">
+            <h3>Prerequisites:</h3>
+            <ul id="prerequisites-list">
+                <li>
+                    <textarea placeholder="Enter prerequisite details"></textarea>
+                    <button class="remove-prereq">✖</button>
+                </li>
+            </ul>
+            <div id="add-prereq-section">
+                <button id="add-prereq-btn" class="tertiary-btn">ADD PREREQUISITE</button>
+            </div>
+        </div> <!-- Prereq section -->
+               
+        <div id="steps-section">
+            <h3>Steps:</h3>
+            <ol id="steps-list">
+                <li>
+                    <textarea placeholder="Enter step details"></textarea>
+                    <button class="remove-step">✖</button>
+                    <button class="add-picture">Add Picture?</button>
+                    <input type="file" class="step-image"">
+                    <span>📷 picture.png</span>
+                </li>
+            </ol>
+            <div id="add-step-section">
+                <button id="add-step-btn" class="tertiary-btn">ADD STEP</button>
+            </div>
+        </div> <!-- Steps section -->
+
+        <button id="submit-btn" class="tertiary-btn">SUBMIT</button>
+
+    </div>
+
+    <div id="footer" >
+        <div id="footer-logo" class="logo">
+            <!-- Copy right icon-->
+            <img src="img/smart-home.png" alt="Home Labs Logo" >
+            <h3>Home Labs</h3>
+        </div>
+        <div id="contacts">
+            <h3>About Us</h3>
+            <ul>
+                <li>Who are we?</li>
+                <li>Why contribute?</li>
+            </ul>
+            <h3>Find Us</h3>
+            <ul>
+                <li>Instagram</li>
+                <li>Twitter</li>
+            </ul>
+        </div>
+        <div id="Attributes">
+            <a href="https://www.flaticon.com/" title="icons">Icons created by Freepik - Flaticon</a>
+        </div>
+    </div>
+</body>
+
+</html>

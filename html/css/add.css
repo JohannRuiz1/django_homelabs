@@ -1,0 +1,60 @@
+#title-section {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+}
+
+#upload-section {
+    display: flex;
+    padding: 10px;
+}
+
+/* List Items */
+#prerequisites-section li,
+#steps-section li {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between text and buttons */
+}
+
+/* Textarea Fields */
+#prerequisites-section li textarea,
+#steps-section li textarea {
+    flex-grow: 1; /* Makes textarea take up available space */
+    width: 100%; /* Ensures textarea spans the list item */
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Allows vertical resizing but prevents horizontal stretching */
+    min-height: 50px; /* Ensures a reasonable default height */
+}
+
+/* Buttons for Removing Items */
+#prerequisites-section li button,
+#steps-section li button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+#prerequisites-section li button:hover,
+#steps-section li button:hover {
+    background: #c82333;
+}
+
+.step-image {
+    display: none;
+}
+
+#submit-btn {
+    background: green;
+    margin: 12px;
+}

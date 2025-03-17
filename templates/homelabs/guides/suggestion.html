@@ -1,0 +1,13 @@
+{% extends "homelabs/base.html" %}
+
+
+{% block page-title%} Adding Suggestion Page {% endblock %}
+
+{% block content %}
+    <!-- Guide Header -->
+    {% include 'homelabs/components/guide/full-header.html' with title=guide.title category=guide.category author=guide.author labels=guide.labels views=guide.views edits=guide.edits likes=guide.likes %}
+    
+    <!-- Guide Content -->
+    {% include 'homelabs/components/guide/full-suggestion.html' with image_url=guide.image_url prerequisites=guide.prerequisites steps=guide.steps suggestions=guide.suggestions %}
+
+{% endblock %}
