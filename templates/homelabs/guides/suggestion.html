@@ -1,5 +1,9 @@
 {% extends "homelabs/base.html" %}
+{% load static %}
 
+{% block css%}
+    <link rel="stylesheet" type="text/css"  href="{% static "css/view.css" %}">
+{% endblock %}
 
 {% block page-title%} Adding Suggestion Page {% endblock %}
 

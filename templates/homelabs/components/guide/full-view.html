@@ -1,7 +1,8 @@
+{% load static %}
 <div id="guide-body">
     <div id="guide-left">
         <div id="guide-main">
-            <img src="{{ image_url }}" alt="Guide Image">
+            <img src="{% static image_url %}" alt="Guide Image">
 
             <div id="prerequisites-section">
                 <h3>Prerequisites:</h3>
@@ -29,14 +30,15 @@
         </div> <!-- Step Guide -->
     </div>
 
+
     <div id="guide-mode">
         <h3>Mode: Viewing (Original)</h3>
         <select id="suggestions" name="suggestions">
             <option value="default">Suggestions</option>
             {% for suggestion in suggestions %}
-                <option value="{{ suggestion.value }}">{{ suggestion.text }} ❤️ {{ suggestion.likes }}</option>
+                <option value="option{{ forloop.counter }}">{{ suggestion.text }} ❤️ {{ suggestion.likes }}</option>
             {% endfor %}
         </select>
-        <button id="add-suggestion-btn" class="tertiary-btn">Add Suggestion</button>
+        <a href="{% url 'homelabs:guide_suggestion' %}"><button id="add-suggestion-btn" class="tertiary-btn">Add Suggestion</button></a>
     </div> <!-- Guide mode -->
 </div>

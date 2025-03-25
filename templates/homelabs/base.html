@@ -1,14 +1,16 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Home Labs | {% block page-title  %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="css/global.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="{% static "css/global.css" %}">
+    <link rel="stylesheet" type="text/css"  href="{% static "css/styles.css" %}">
+    <script src="{% static "js/jquery-3.7.1.min.js" %}"></script>
+    {% block css  %}{% endblock %}
+    {% block js  %}{% endblock %}
     <!-- Javascript -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/scripts.js"></script>
 </head>
 <!--
 Pictures Used:
@@ -28,12 +30,12 @@ https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleuserconten
         </div>
 
         <div id="title-logo" class="logo">
-            <a href="home.html"><img src="img/smart-home.png" alt="Home Labs Logo" >
+            <a href="{% url 'homelabs:home' %}"><img src="{% static "img/smart-home.png" %}" alt="Home Labs Logo" >
             <h1>Home Labs</h1></a>
         </div> <!-- Logo + Title -->
 
 
-        <button id="guide-btn" class="tertiary-btn">Guides</button>
+        <a href="{% url 'homelabs:guide_list' %}?search=Guides"><button id="guide-btn" class="tertiary-btn">Guides</button></a>
 
         <div id="search-bar">
             <!-- Add Search Icon-->
@@ -56,7 +58,7 @@ https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleuserconten
     <div id="footer" >
         <div id="footer-logo" class="logo">
             <!-- Copy right icon-->
-            <img src="img/smart-home.png" alt="Home Labs Logo" >
+            <img src="{% static "img/smart-home.png" %}" alt="Home Labs Logo" >
             <h3>Home Labs</h3>
         </div>
         <div id="contacts">

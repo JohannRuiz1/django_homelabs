@@ -1,4 +1,5 @@
 {% extends "homelabs/base.html" %}
+{% load static %}
 
 
 {% block page-title%} Home Page {% endblock %}
@@ -7,8 +8,8 @@
     <h1> Weekly Featured Guide</h1>
     <div id="featured-container">
         <div id="featured-user">
-            <img src="img/headshot.jpeg" alt="Featured User Picture">
-            <h1>JohannRuiz176</h1>
+            <img src="{% static "img/headshot.jpeg" %}" alt="Featured User Picture">
+            <h1>{{ guide.author }}</h1>
         </div> <!-- Featured User -->
         {% include 'homelabs/components/guide/box.html' with image_url=guide.image_url title=guide.title category=guide.category labels=guide.labels views=guide.views edits=guide.edits likes=guide.likes %}
     </div> <!-- Featured Guide Container -->

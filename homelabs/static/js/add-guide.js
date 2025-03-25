@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     // Remove the validation error message if there is content 
     $("#form-title").on("blur", function(event) {
-        if($(this).val() != ""){
+        if($(this).val() !== ""){
             $(this).css("border", "");
             var errorSpan = $("#title-section").find('span.error');
             
@@ -16,7 +16,7 @@ $(document).ready(function(){
     // Remove the validation error message if select a non default category
     $("#categories").on("change", function() {
         var selectedCategory = $(this).val();  // Get the selected option value
-        if($("#categories").val() != "default"){
+        if($("#categories").val() !== "default"){
             $(this).css("border", "");
             var errorSpan = $("#category-select").find('span.error');
             
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
     // Removes the validation error message if there is content
     $("#prerequisites-list").on("blur", "li textarea", function(event) {
-        if($(this).val() != ""){
+        if($(this).val() !== ""){
             $(this).css("border", "");
             var errorSpan = $(this).closest('li').find('span.error');
             
@@ -63,7 +63,7 @@ $(document).ready(function(){
 
     // Removes the validation error message if there is content
     $("#steps-list").on("blur", "li textarea", function(event) {
-        if($(this).val() != ""){
+        if($(this).val() !== ""){
             $(this).css("border", "");
             var errorSpan = $(this).closest('li').find('span.error');
             
@@ -86,13 +86,13 @@ $(document).ready(function(){
         var success = true;
         clearErrors();
 
-        if($("#form-title").val() == ""){
+        if($("#form-title").val() === ""){
             $("#form-title").after('<span class="error"> Please Enter Guide Title.</span>');
             $("#form-title").css("border", "2px solid red");
             success = false;
         } 
 
-        if($("#categories").val() == "default"){
+        if($("#categories").val() === "default"){
             $("#categories").after('<span class="error"> Please Enter Guide Category.</span>');
             $("#categories").css("border", "2px solid red");
             success = false;
@@ -100,7 +100,7 @@ $(document).ready(function(){
 
         $("#prerequisites-list li").each(function(_, element) {
             var textarea = $(element).find("textarea");
-            if(textarea.val() == ""){
+            if(textarea.val() === ""){
                 textarea.after('<span class="error"> Missing Details.</span>');
                 textarea.css("border", "2px solid red");
                 success = false;
@@ -110,7 +110,7 @@ $(document).ready(function(){
         if ($("#steps-list li").length > 0) {
             $("#steps-list li").each(function(_, element) {
                 var textarea = $(element).find("textarea");
-                if(textarea.val() == ""){
+                if(textarea.val() === ""){
                     textarea.after('<span class="error"> Missing Details.</span>');
                     textarea.css("border", "2px solid red");
                     success = false;

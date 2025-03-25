@@ -1,16 +1,16 @@
 <div id="guide-header">
     <div id="guide-title">
-        <h2>{ title }</h2>
-        <h3>By { author }</h3>
+        <h2>{{ title }}</h2>
+        <h3>By {{ author }}</h3>
     </div>
     <div id="guide-metadata">
-        <h3>{ category }</h3>
+        <h3>{{ category }}</h3>
         <div class="guide-labels">
             {% for label in labels %}
                 <span class="label">{{ label }}</span>
             {% endfor %}
         </div>
-        <p>Posted on { date }</p>
+        <p>Posted on {{ date }}</p>
         <div class="guide-icons">
             <span> 👀 {{ views }}</span>
             <span> ✏️ {{ edits }}</span>

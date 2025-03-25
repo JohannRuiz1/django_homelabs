@@ -1,3 +1,5 @@
+{% extends "homelabs/base.html" %}
+{% load static %}
 <!--
 Pictures Used Links:
 https://www.google.com/imgres?q=proxmox&imgurl=https%3A%2F%2Fwww.45drives.com%2Fsolutions%2Fproxmox%2Fimg%2Fproxmox_Logo.png&imgrefurl=https%3A%2F%2Fwww.45drives.com%2Fsolutions%2Fproxmox%2F&docid=Wwy2HY8R6jaJNM&tbnid=6L6cUfzxvus39M&vet=12ahUKEwjU7-a0sdOLAxU6K1kFHVofLUYQM3oECBcQAA..i&w=840&h=800&hcb=2&ved=2ahUKEwjU7-a0sdOLAxU6K1kFHVofLUYQM3oECBcQAA
@@ -9,8 +11,14 @@ https://roi4cio.com/catalog/product/vmware-esxi
 https://www.google.com/imgres?q=vlans&imgurl=https%3A%2F%2Fwww.etherwan.com%2Fsites%2Fdefault%2Ffiles%2Fvlan-6.jpg&imgrefurl=https%3A%2F%2Fwww.etherwan.com%2Fus%2Fsupport%2Ffeatured-articles%2Fbrief-introduction-vlans&docid=ewE-NoX0RDKF8M&tbnid=PLivVzkjzphlVM&vet=12ahUKEwjY6c3Rr9OLAxXzFmIAHSG2L6oQM3oECFMQAA..i&w=685&h=380&hcb=2&ved=2ahUKEwjY6c3Rr9OLAxXzFmIAHSG2L6oQM3oECFMQAA
 https://www.google.com/imgres?q=kubernetes&imgurl=https%3A%2F%2Fi0.wp.com%2Fcodeblog.dotsandbrackets.com%2Fwp-content%2Fuploads%2F2017%2F07%2Fkubernetes.jpg%3Ffit%3D821%252C714%26ssl%3D1&imgrefurl=https%3A%2F%2Fcodeblog.dotsandbrackets.com%2Fwhat-kubernetes%2F&docid=vUOwgEEazoKDWM&tbnid=NLs4xtVwsu5q4M&vet=12ahUKEwjS7siTsNOLAxXKEFkFHdJ2PNcQM3oECGgQAA..i&w=821&h=714&hcb=2&ved=2ahUKEwjS7siTsNOLAxXKEFkFHdJ2PNcQM3oECGgQAA
 -->
-{% extends "homelabs/base.html" %}
 
+{% block css%}
+    <link rel="stylesheet" type="text/css"  href="{% static "css/list.css" %}">
+{% endblock %}
+
+{% block js%}
+    <script src="{% static "js/search.js" %}"></script>
+{% endblock %}
 
 {% block page-title%} View Guides Page {% endblock %}
 
@@ -47,7 +55,7 @@ https://www.google.com/imgres?q=kubernetes&imgurl=https%3A%2F%2Fi0.wp.com%2Fcode
 
     <div id="guide-list">
         {% for guide in guides %}
-            {% include 'homelabs/components/guide/box.html' with image_url=guide.image_url title=guide.title author=guide.author labels=guide.labels views=guide.views edits=guide.edits likes=guide.likes %}
+            <a href="{% url 'homelabs:guide_view' %}">{% include 'homelabs/components/guide/box.html' with image_url=guide.image_url title=guide.title author=guide.author labels=guide.labels views=guide.views edits=guide.edits likes=guide.likes %}</a>
         {% endfor %}
     </div>
 {% endblock %}
