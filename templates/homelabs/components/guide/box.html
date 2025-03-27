@@ -10,12 +10,12 @@
             <p>{{ author }}</p>
         {% endif %}
         {% if category %}
-            <p>{{ category }}</p>
+            <p>{{ category.value }}</p>
         {% endif %}
         <!-- Labels -->
         <div class="guide-labels">
             {% for label in labels %}
-                <span class="label">{{ label }}</span>
+                <span class="label">{{ label.value }}</span>
             {% endfor %}
         </div>
     </div> <!-- Guide Content -->

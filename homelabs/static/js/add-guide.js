@@ -49,7 +49,7 @@ $(document).ready(function(){
 
     // Add and removing steps 
     $("#add-step-btn").on("click", function(event){
-        $("#steps-list").append('<li><textarea placeholder="Enter step details"></textarea><button class="remove-step">✖</button><button class="add-picture">Add Picture?</button><input type="file" class="step-image""></li>');
+        $("#steps-list").append('<li><textarea placeholder="Enter step details, commands in: \'\'\' \'\'\'"></textarea><button class="remove-step">✖</button><button class="add-picture">Add Picture?</button><input type="file" class="step-image""></li>');
         var errorSpan = $("#steps-section").find('span.error');
         
         if (errorSpan.length > 0) {

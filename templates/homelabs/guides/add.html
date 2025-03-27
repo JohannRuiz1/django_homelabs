@@ -25,10 +25,10 @@
     </div>
 
     <!-- Categories -->
-    {% include 'homelabs/components/categories.html' %}
+    {% include 'homelabs/components/categories.html' with categories=categories %}
 
     <!-- Guide Labels -->
-    {% include 'homelabs/components/labels.html' with filter_labels=filter.labels %}
+    {% include 'homelabs/components/labels.html' with labels=labels filter_labels=filter.labels %}
 
     <div id="upload-section">
         <button class="tertiary-btn">UPLOAD COVER PICTURE!</button>
@@ -51,7 +51,7 @@
         <h3>Steps:</h3>
         <ol id="steps-list">
             <li>
-                <textarea placeholder="Enter step details"></textarea>
+                <textarea placeholder="Enter step details, commands in: ''' '''"></textarea>
                 <button class="remove-step">✖</button>
                 <button class="add-picture">Add Picture?</button>
                 <input type="file" class="step-image"">

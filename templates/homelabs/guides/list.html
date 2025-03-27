@@ -24,11 +24,11 @@ https://www.google.com/imgres?q=kubernetes&imgurl=https%3A%2F%2Fi0.wp.com%2Fcode
 
 {% block content %}
     <!-- Categories -->
-    {% include 'homelabs/components/categories.html' %}
+    {% include 'homelabs/components/categories.html' with categories=categories %}
 
     <div id="filter-container">
         <!-- Filter: Label 1, Label 2, Sort: Newest -->
-        {% include 'homelabs/components/labels.html' with filter_labels=filter.labels %}
+        {% include 'homelabs/components/labels.html' with labels=labels filter_labels=filter.labels %}
 
         <div class="sort">
             <label for="sorting">Sort: </label>
@@ -54,8 +54,8 @@ https://www.google.com/imgres?q=kubernetes&imgurl=https%3A%2F%2Fi0.wp.com%2Fcode
     </div> <!-- Going through pages -->
 
     <div id="guide-list">
-        {% for guide in guides %}
-            <a href="{% url 'homelabs:guide_view' %}">{% include 'homelabs/components/guide/box.html' with image_url=guide.image_url title=guide.title author=guide.author labels=guide.labels views=guide.views edits=guide.edits likes=guide.likes %}</a>
+        {% for guide_info in guides %}
+            <a href="{% url 'homelabs:guide_view' guide_info.id %}">{% include 'homelabs/components/guide/box.html' with image_url=guide_info.image_url title=guide_info.title author=guide_info.author labels=guide_info.labels views=guide_info.views edits=guide_info.edits likes=guide_info.likes %}</a>
         {% endfor %}
     </div>
 {% endblock %}

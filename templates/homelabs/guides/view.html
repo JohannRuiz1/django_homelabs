@@ -13,9 +13,9 @@ https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleuserconten
 
 {% block content %}
     <!-- Guide Header -->
-    {% include 'homelabs/components/guide/full-header.html' with title=guide.title category=guide.category author=guide.author labels=guide.labels views=guide.views edits=guide.edits likes=guide.likes %}
+    {% include 'homelabs/components/guide/full-header.html' with title=guide_info.title category=guide_info.category author=guide_info.author labels=guide_info.labels views=guide_info.views edits=guide_info.edits likes=guide_info.likes %}
 
     <!-- Guide Content -->
-    {% include 'homelabs/components/guide/full-view.html' with image_url=guide.image_url prerequisites=guide_content.prerequisites steps=guide_content.steps suggestions=guide_content.suggestions %}
+    {% include 'homelabs/components/guide/full-view.html' with image_url=guide_info.image_url prerequisites=guide_content.prerequisites steps=guide_content.steps suggestions=guide_content.suggestions %}
 
 {% endblock %}

@@ -4,10 +4,10 @@
         <h3>By {{ author }}</h3>
     </div>
     <div id="guide-metadata">
-        <h3>{{ category }}</h3>
+        <h3>{{ category.value }}</h3>
         <div class="guide-labels">
             {% for label in labels %}
-                <span class="label">{{ label }}</span>
+                <span class="label">{{ label.value }}</span>
             {% endfor %}
         </div>
         <p>Posted on {{ date }}</p>

@@ -22,10 +22,10 @@ https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleuserconten
         <div id="hamburger-menu">
             <button id="menu-btn">☰</button>
             <div id="menu-content" class="hidden">
-                <a href="home.html">Home</a>
-                <a href="guides/list.html?search=Guides">Guide Categories</a>
-                <a href="guides/add.html">Add Guide</a>
-                <a href="account/login.html">Login</a>
+                <a href="{% url 'homelabs:home' %}">Home</a>
+                <a href="{% url 'homelabs:guide_list' %}?search=Guides">Guide Categories</a>
+                <a href="{% url 'homelabs:guide_add' %}">Add Guide</a>
+                <a href="account/login">Login</a>
             </div>
         </div>
 

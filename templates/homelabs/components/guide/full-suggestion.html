@@ -40,6 +40,6 @@
    <div id="guide-mode">
         <h3>Mode: Suggestion</h3>
         <input type="text" name="suggestion-name" placeholder="Input Suggestion Name">
-        <a href="{% url 'homelabs:guide_view' %}"><button id="save-suggestion-btn" class="tertiary-btn">Save</button></a>
+        <a href="{% url 'homelabs:guide_view' guide_info.id %}"><button id="save-suggestion-btn" class="tertiary-btn">Save</button></a>
     </div> <!-- Guide Mode-->
 </div>

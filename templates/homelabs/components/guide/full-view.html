@@ -18,8 +18,7 @@
                 <ol>
                     {% for step in steps %}
                         <li>
-                            <strong>{{ step.title }}</strong>
-                            <p>{{ step.description }}</p>
+                            {{ step.description }}
                             {% if step.command %}
                             <pre>{{ step.command }}</pre>
                             {% endif %}
