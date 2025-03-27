@@ -33,6 +33,7 @@ a {
     border: none;
     font-size: 36px;
     cursor: pointer;
+    padding-left: 16px;
     /* padding: 10px; */
 }
 
@@ -80,12 +81,50 @@ a {
     margin: 0;
 }
 
-#footer-logo {
+#login-bar {
     display: flex;
+    flex-direction: column;
+    width: fit-content;
     align-items: center;
-    gap: 10px;
-    padding: 12px;
+    gap: 0;
 }
+
+#login-creds {
+    display: flex;
+    width: 80%;
+    gap: 12px;
+    flex-direction: row;
+}
+
+#login-creds input {
+    width: 80%;
+}
+
+#login-submit {
+    width: fit-content;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.login a {
+    color: #007bff;
+    font-size: 15px;
+}
+
+#logged-in {
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    padding-right: 16px;
+    align-items: baseline;
+}
+
+#logged-in p{
+    color: white;
+}
+
+
 
 .logo img {
     width: 64px;
@@ -111,8 +150,6 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-
-
 
 .tertiary-btn {
     font-size: 20px;
@@ -164,6 +201,13 @@ input, select {
     color: white;
     margin-top: 20px;
     width: 100%;
+}
+
+#footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
 }
 
 #contacts h3 {

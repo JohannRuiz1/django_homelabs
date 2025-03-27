@@ -23,9 +23,11 @@ https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleuserconten
             <button id="menu-btn">☰</button>
             <div id="menu-content" class="hidden">
                 <a href="{% url 'homelabs:home' %}">Home</a>
-                <a href="{% url 'homelabs:guide_list' %}?search=Guides">Guide Categories</a>
+                <a href="{% url 'homelabs:guide_list' %}?search=Guides">Guides</a>
+                {% if request.session.username %}
+                <a href="{% url 'homelabs:profile' %}">Profile</a>
                 <a href="{% url 'homelabs:guide_add' %}">Add Guide</a>
-                <a href="account/login">Login</a>
+                {% endif %}
             </div>
         </div>
 
@@ -45,10 +47,26 @@ https://www.google.com/imgres?q=gitlab&imgurl=https%3A%2F%2Fyt3.googleuserconten
             </form>
         </div> <!-- Search Bar -->
 
-        <div id="login-bar">
-            <!-- Add logic when user is logged in-->
-            <button id="login-btn" class="tertiary-btn">Login</button>
-        </div> <!-- Login-->
+        {% if request.session.username %}
+        <div class="login" id="logged-in">
+            <p> Logged in as <strong>{{ request.session.username }}</strong></p>
+            <a href="{% url 'homelabs:logout' %}"><h4>Log out</h4></a>
+        </div>
+
+        {%  else %}
+        <form class="login" id="login-bar" action="{% url 'homelabs:login' %}" method="POST">
+            {%  csrf_token %}
+            <div id="login-creds">
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <div id="login-submit">
+                <input type="submit" name="submit" value="Log in">
+                <a href="#"><h4>or Register</h4></a>
+            </div>
+        </form>
+        {% endif %}
+
     </div>
 
     <div id="content" >

@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import featured_guide_info, featured_guide_content, guides_info, CategoryEnum, LabelEnum, guide_content
+from django.shortcuts import render, redirect
+from .models import featured_guide_info, featured_guide_content, guides_info, CategoryEnum, LabelEnum, users, guide_content
 
 
 # Create your views here.
@@ -34,3 +34,32 @@ def guide_suggestion(request):
     # Pull from database
     return render(request, "homelabs/guides/suggestion.html", {"guide_info": featured_guide_info, "guide_content": guide_content} )
 
+
+def login(request):
+    username = request.POST.get("username")
+    password = request.POST.get("password")
+
+    if username in users and users[username]["password"] == password:
+        request.session["username"] = username
+        request.session["role"] = users[username]["role"]
+
+    return redirect('homelabs:home')
+
+
+def logout(request):
+    del request.session["username"]
+    del request.session["role"]
+    return redirect('homelabs:home')
+
+
+def profile(request):
+    # Eventually will be a sql query
+    if request.session.get("username"):
+        # All Guides
+        if request.session["role"] == "admin":
+            users_guides = guides_info
+        else:
+            users_guides = list(filter(lambda guide: guide.author == request.session["username"], guides_info))
+        return render(request, "homelabs/profile.html", {"guides": users_guides})
+    else:
+        return redirect("homelabs:home")

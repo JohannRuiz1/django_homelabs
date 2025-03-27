@@ -1,4 +1,5 @@
 from typing import List
+from datetime import datetime
 
 from django.db import models
 from enum import Enum
@@ -55,7 +56,7 @@ class Suggestion:
 class GuideInfo:
     # id is a shadow property
     def __init__(self, id: int, title: str, author: str, image_url: str, category: CategoryEnum, labels: List[LabelEnum],
-                 views: int = 0, edits: int = 0, likes: int = 0):
+                 views: int = 0, edits: int = 0, likes: int = 0, date: datetime = datetime.now()):
         self.id = id
         self.title = title
         self.author = author
@@ -65,6 +66,7 @@ class GuideInfo:
         self.views = views
         self.edits = edits
         self.likes = likes
+        self.date = date
 
 class GuideContent:
     # id is a shadow property
@@ -221,3 +223,20 @@ guide8 = GuideInfo(
 
 # Store all guides in a list
 guides_info = [guide1, guide2, guide3, guide4, guide5, guide6, guide7, guide8]
+
+users = {
+    "johannruiz176": {
+        "password": "pass123",
+        "role": "regular"
+    },
+    "ScriptMaster": {
+        "password": "abc123",
+        "role": "regular"
+    },
+    "admin": {
+        "password": "123pass",
+        "role": "admin"
+    }
+}
+
+

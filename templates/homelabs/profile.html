@@ -1,0 +1,19 @@
+{% extends "homelabs/base.html" %}
+{% load static %}
+
+{% block css%}
+    <link rel="stylesheet" type="text/css"  href="{% static "css/list.css" %}">
+{% endblock %}
+
+{% block page-title%} Profile Page {% endblock %}
+
+{% block content %}
+    <!-- Change the title based on the role-->
+    <!-- Regular Role: an edit icon, Admin: have an edit or delete-->
+    <h2>Your Guides</h2>
+    <div id="guide-list">
+        {% for guide_info in guides %}
+            <a href="{% url 'homelabs:guide_view' guide_info.id %}">{% include 'homelabs/components/guide/box.html' with image_url=guide_info.image_url title=guide_info.title author=guide_info.author labels=guide_info.labels views=guide_info.views edits=guide_info.edits likes=guide_info.likes %}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
